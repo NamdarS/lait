@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -6,19 +5,25 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export async function POST(request: NextApiRequest, response: NextApiResponse) {
+export async function POST() {
   const prompt = 'integral from 2 to 8 of square root of x plus theta';
   try {
     const completion = await openai.createCompletion({
-      model: 'gpt-3.5-turbo',
-      prompt: prompt,
+      model: 'text-davinci-003',
+      prompt: `give me latex code for ${prompt}`,
       max_tokens: 50,
     });
 
     const result = { text: completion.data.choices[0].text };
     console.log(result);
-    response.status(200).json(result);
+
+    return new Response(JSON.stringify(result), {
+      headers: { 'Content-Type': 'application/json' },
+    });
   } catch (error: any) {
-    response.status(500).json({ error: error.message });
+    return new Response(error.message || error.toString(), {
+      status: error.status || 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
