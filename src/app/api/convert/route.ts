@@ -15,11 +15,10 @@ export async function POST() {
     });
 
     const result = { text: completion.data.choices[0].text };
-    console.log(result);
-
     return new Response(JSON.stringify(result), {
       headers: { 'Content-Type': 'application/json' },
     });
+
   } catch (error: any) {
     return new Response(error.message || error.toString(), {
       status: error.status || 500,
