@@ -6,7 +6,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 export async function POST() {
-  const prompt = 'integral from 2 to 8 of square root of x plus theta';
+  const prompt = '2 over square root n';
   try {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
