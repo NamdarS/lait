@@ -1,3 +1,4 @@
+import { NextRequest } from 'next/server';
 import { Configuration, OpenAIApi } from 'openai';
 
 const configuration = new Configuration({
@@ -5,8 +6,9 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-export async function POST() {
-  const prompt = 'integral from 2 to 8 of square root of x plus theta';
+export async function POST(req: NextRequest) {
+  const { prompt } = await req.json();
+
   try {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
@@ -18,7 +20,6 @@ export async function POST() {
     return new Response(JSON.stringify(result), {
       headers: { 'Content-Type': 'application/json' },
     });
-
   } catch (error: any) {
     return new Response(error.message || error.toString(), {
       status: error.status || 500,
