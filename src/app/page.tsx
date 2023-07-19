@@ -1,7 +1,20 @@
-export default function Home() {
+import dynamic from 'next/dynamic';
+import { TextInput } from '@/components/TextInput';
+import { SubmitButton } from '@/components/SubmitButton';
+
+// Import the Redux Provider only on client side
+const ClientSideProvider = dynamic(() => import('../components/ClientSideProvider'),
+  { ssr: false }
+);
+
+const Home: React.FC = () => {
+
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <ClientSideProvider>
+      <TextInput />
+      <SubmitButton label='Submit'/>
+    </ClientSideProvider>
   );
-}
+};
+
+export default Home;

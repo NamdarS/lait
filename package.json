@@ -9,16 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.3.3",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
+    "@types/redux": "^3.6.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
     "http-proxy": "^1.18.1",
     "http-proxy-middleware": "^2.0.6",
-    "multer": "^1.4.5-lts.1",
     "next": "13.4.7",
     "next-connect": "^1.0.0",
     "node-fetch": "^3.3.1",
@@ -26,6 +27,7 @@
     "postcss": "8.4.24",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-redux": "^8.1.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.1.6"
   },
