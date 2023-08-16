@@ -1,3 +1,5 @@
+'use client';
+
 import dynamic from 'next/dynamic';
 import { TextInput } from '@/components/TextInput';
 import { SubmitButton } from '@/components/SubmitButton';
