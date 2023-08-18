@@ -2,7 +2,8 @@
 
 import React, { FC } from 'react';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setLatexCode } from '../store/slices/latexSlice';
 import { RootState } from '../store/store';
 
 interface ButtonProps {
@@ -10,15 +11,18 @@ interface ButtonProps {
 }
 
 export const SubmitButton: FC<ButtonProps> = ({ label }) => {
+  const dispatch = useDispatch();
   // value of textInput extracted from redux store
-  const value = useSelector((state: RootState) => state.textInput.value);
+  const userInput = useSelector((state: RootState) => state.textInput.value);
+
   const handleClick = async () => {
     try {
       const response = await axios.post('/api/convert', {
-        prompt: value,
+        prompt: userInput,
       });
 
-      console.log(response.data);
+      const { data } = response;
+      dispatch(setLatexCode(data.text));
     } catch (error) {
       console.error('There was a problem with the request:', error);
     }
