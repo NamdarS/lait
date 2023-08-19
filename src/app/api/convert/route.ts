@@ -13,7 +13,9 @@ export async function POST(req: NextRequest) {
     const completion = await openai.createCompletion({
       model: 'text-davinci-003',
       prompt: `give me latex code for ${prompt}. 
-               Do not return anything else in your response but the actual latex code.`,
+               Do not return anything else in your response but the actual latex code. 
+               Ensure that it is valid latex code that can be rendered, validility of 
+               the latex code is more important than accuracy.`,
       max_tokens: 50,
     });
 

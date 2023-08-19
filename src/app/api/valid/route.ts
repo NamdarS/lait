@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
   try {
     const { latexCode } = await req.json();
 
-    const prompt = `The following text may or may not be valid latex code: ${latexCode}}
+    const prompt = `The following text may or may not be valid latex code: ${latexCode}}.
                     process it so that it's valid latex code that can be rendered.
                     Do not return anything in your response but the actual latex code.`;
     const completion = await openai.createCompletion({
