@@ -7,7 +7,6 @@ import { MathJaxProvider, MathJaxNode } from '@yozora/react-mathjax';
 
 export const LatexRender: FC = () => {
   const latexCode = useSelector((state: RootState) => state.latex.latexCode);
-  console.log(latexCode);
   return (
     <MathJaxProvider>
       {latexCode && <MathJaxNode inline formula={latexCode} />}
