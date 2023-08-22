@@ -15,21 +15,23 @@ export const LatexEditor: FC = () => {
   const latexCode = useSelector((state: RootState) => state.latex.latexCode);
 
   const handleLatexChange = (newLatex: string) => {
-    dispatch(setLatexCode(newLatex)); 
+    dispatch(setLatexCode(newLatex));
   };
 
   return (
-    <AceEditor
-      mode="latex"
-      theme="monokai"
-      onChange={handleLatexChange}
-      value={latexCode}
-      name="LatexEditorDiv" // This should be a unique ID for the editor div
-      editorProps={{ $blockScrolling: true }}
-      setOptions={{
-        fontSize: '16pt',
-        showLineNumbers: true,
-      }}
-    />
+    <div className="h-[400px] overflow-auto">
+      <AceEditor
+        mode="latex"
+        theme="monokai"
+        onChange={handleLatexChange}
+        value={latexCode}
+        name="LatexEditorDiv" // This should be a unique ID for the editor div
+        editorProps={{ $blockScrolling: true }}
+        setOptions={{
+          fontSize: '16pt',
+          showLineNumbers: true,
+        }}
+      />
+    </div>
   );
 };

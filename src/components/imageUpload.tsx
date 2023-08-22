@@ -29,7 +29,6 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
           const latexFromOCR = ocrResponse.data;
-          console.log('latexFromOCR', latexFromOCR)
 
           // Update Redux state
           dispatch(setLatexCode(latexFromOCR));
@@ -58,7 +57,6 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
     'transition',
     'hover:bg-blue-600',
     'active:bg-blue-700',
-    ,
     'flex-1',
     'text-2xl',
   ].join(' ');
