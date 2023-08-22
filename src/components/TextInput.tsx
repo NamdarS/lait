@@ -13,7 +13,7 @@ export const TextInput: React.FC = () => {
     'border',
     'rounded',
     'px-3',
-    'py-2',
+    'py-3',
     'w-2/5',
     'focus:outline-none',
     'focus:ring',

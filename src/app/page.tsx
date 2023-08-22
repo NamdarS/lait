@@ -18,8 +18,10 @@ const Home: React.FC = () => {
   return (
     <ClientSideProvider>
       <TextInput />
-      <SubmitButton label="Submit" />
-      <ImageUpload OCR_API_ENDPOINT="http://localhost:3000/api/ocr" />
+      <div className="flex items-center justify-center h-screen w-min-content space-x-4">
+        <SubmitButton label="Submit" />
+        <ImageUpload OCR_API_ENDPOINT="http://localhost:3000/api/ocr" />
+      </div>
       <LatexRender />
       <LatexEditor />
     </ClientSideProvider>

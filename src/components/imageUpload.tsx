@@ -46,16 +46,30 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
     }
   };
 
+  const classes = [
+    'bg-blue-500',
+    'text-white',
+    'rounded',
+    'focus:outline-none',
+    'focus:ring-2',
+    'focus:ring-blue-400',
+    'transition',
+    'hover:bg-blue-600',
+    'active:bg-blue-700',
+    'text-2xl',
+    'cursor-pointer',
+  ].join(' ');
+
   return (
     <div>
-      <label htmlFor="image-upload" className="text-2xl cursor-pointer">
+      <label htmlFor="image-upload" className={classes}>
         📸
         <input
           id="image-upload"
           type="file"
           accept="image/*"
           onChange={handleImageUpload}
-          className="hidden" // Hides the input but still makes it accessible via the label
+          className="hidden"
         />
       </label>
       {uploadedFileName && <span>{uploadedFileName}</span>}
