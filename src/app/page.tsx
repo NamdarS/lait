@@ -18,7 +18,7 @@ const Home: React.FC = () => {
   return (
     <ClientSideProvider>
       <TextInput />
-      <div className="flex items-center justify-center h-screen w-min-content space-x-4">
+      <div className="flex space-x-3 w-40 mx-auto pt-4">
         <SubmitButton label="Submit" />
         <ImageUpload OCR_API_ENDPOINT="http://localhost:3000/api/ocr" />
       </div>

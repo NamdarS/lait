@@ -29,6 +29,7 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
           const latexFromOCR = ocrResponse.data;
+          console.log('latexFromOCR', latexFromOCR)
 
           // Update Redux state
           dispatch(setLatexCode(latexFromOCR));
@@ -50,19 +51,21 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
     'bg-blue-500',
     'text-white',
     'rounded',
+    'py-1',
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-blue-400',
     'transition',
     'hover:bg-blue-600',
     'active:bg-blue-700',
+    ,
+    'flex-1',
     'text-2xl',
-    'cursor-pointer',
   ].join(' ');
 
   return (
-    <div>
-      <label htmlFor="image-upload" className={classes}>
+    <button className={classes}>
+      <label htmlFor="image-upload">
         📸
         <input
           id="image-upload"
@@ -72,7 +75,7 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
           className="hidden"
         />
       </label>
-      {uploadedFileName && <span>{uploadedFileName}</span>}
-    </div>
+      {/*uploadedFileName && <span>{uploadedFileName}</span>*/}
+    </button>
   );
 };

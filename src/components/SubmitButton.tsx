@@ -14,7 +14,7 @@ export const SubmitButton: FC<ButtonProps> = ({ label }) => {
   const dispatch = useDispatch();
   // value of textInput extracted from redux store
   const userInput = useSelector((state: RootState) => state.textInput.value);
-  const lastSubmittedInputRef = useRef<string>(''); 
+  const lastSubmittedInputRef = useRef<string>('');
 
   const handleClick = async () => {
     try {
@@ -38,13 +38,19 @@ export const SubmitButton: FC<ButtonProps> = ({ label }) => {
     'bg-blue-500',
     'text-white',
     'rounded',
+    'py-1',
     'focus:outline-none',
     'focus:ring-2',
     'focus:ring-blue-400',
     'transition',
     'hover:bg-blue-600',
     'active:bg-blue-700',
+    'flex-1',
   ].join(' ');
 
-  return <button className={classes} onClick={handleClick}>{label}</button>;
+  return (
+    <button className={classes} onClick={handleClick}>
+      {label}
+    </button>
+  );
 };
