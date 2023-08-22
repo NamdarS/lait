@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import './globals.css';
 import { TextInput } from '@/components/TextInput';
 import { SubmitButton } from '@/components/SubmitButton';
 import { LatexRender } from '@/components/LatexRender';
