@@ -47,7 +47,7 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
   };
 
   return (
-    <div className="flex items-center">
+    <div>
       <label htmlFor="image-upload">
         📸
         <input
@@ -58,7 +58,7 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
           className="hidden" // Hides the input but still makes it accessible via the label
         />
       </label>
-      {uploadedFileName && <span className="ml-4">{uploadedFileName}</span>}
+      {uploadedFileName && <span>{uploadedFileName}</span>}
     </div>
   );
 };
