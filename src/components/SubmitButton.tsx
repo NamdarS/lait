@@ -34,5 +34,19 @@ export const SubmitButton: FC<ButtonProps> = ({ label }) => {
     }
   };
 
-  return <button onClick={handleClick}>{label}</button>;
+  const classes = [
+    'bg-blue-500',
+    'text-white',
+    'rounded',
+    'focus:outline-none',
+    'focus:ring-2',
+    'focus:ring-blue-400',
+    'px-4',
+    'py-2',
+    'transition',
+    'hover:bg-blue-600',
+    'active:bg-blue-700',
+  ].join(' ');
+
+  return <button className={classes} onClick={handleClick}>{label}</button>;
 };
