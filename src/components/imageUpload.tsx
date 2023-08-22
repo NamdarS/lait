@@ -5,11 +5,16 @@ import { setLatexCode } from '../store/slices/latexSlice';
 
 interface Props {
   OCR_API_ENDPOINT: string;
+  uploadedFileName: string | null;
+  setUploadedFileName: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
-export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
+export const ImageUpload: FC<Props> = ({
+  OCR_API_ENDPOINT,
+  uploadedFileName,
+  setUploadedFileName,
+}) => {
   const dispatch = useDispatch();
-  const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
 
   const handleImageUpload = async (event: ChangeEvent<HTMLInputElement>) => {
     const files = event.target.files;
@@ -73,7 +78,6 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
           className="hidden"
         />
       </label>
-      {/*uploadedFileName && <span>{uploadedFileName}</span>*/}
     </button>
   );
 };
