@@ -48,7 +48,7 @@ export const ImageUpload: FC<Props> = ({ OCR_API_ENDPOINT }) => {
 
   return (
     <div>
-      <label htmlFor="image-upload">
+      <label htmlFor="image-upload" className="text-2xl cursor-pointer">
         📸
         <input
           id="image-upload"
