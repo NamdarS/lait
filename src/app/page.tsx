@@ -8,6 +8,7 @@ import { LatexRender } from '@/components/LatexRender';
 import { LatexEditor } from '@/components/LatexEditor';
 import { ImageUpload } from '@/components/imageUpload';
 import { useState } from 'react';
+import { roboto_mono } from './fonts';
 
 // Import the Redux Provider only on client side
 const ClientSideProvider = dynamic(
@@ -20,8 +21,14 @@ const Home: React.FC = () => {
 
   return (
     <ClientSideProvider>
+      <div className="flex justify-center">
+        <h1
+          className={`${roboto_mono.className}, py-8 text-center font-mono text-8xl text-blue-600`}
+        >
+          Lait
+        </h1>
+      </div>
       <TextInput />
-
       <div className="flex space-x-3 w-40 mx-auto pt-4">
         <SubmitButton label="Submit" />
         <ImageUpload
@@ -35,9 +42,23 @@ const Home: React.FC = () => {
       </div>
       <div className="flex py-24 px-24 justify-center">
         <div className="flex-1">
+          <div className="flex justify-center">
+            <h1
+              className={`${roboto_mono.className} text-center font-mono text-sm text-blue-600`}
+            >
+              Write LaTeX Code here
+            </h1>
+          </div>
           <LatexEditor />
         </div>
         <div className="flex-1">
+          <div className="flex justify-center">
+            <h1
+              className={`${roboto_mono.className} text-center font-mono text-sm text-blue-600`}
+            >
+              Watch it render here
+            </h1>
+          </div>
           <LatexRender />
         </div>
       </div>
