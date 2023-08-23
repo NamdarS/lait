@@ -7,6 +7,7 @@ import { SubmitButton } from '@/components/SubmitButton';
 import { LatexRender } from '@/components/LatexRender';
 import { LatexEditor } from '@/components/LatexEditor';
 import { ImageUpload } from '@/components/imageUpload';
+import { Footer } from '@/components/Footer';
 import { useState } from 'react';
 import { roboto_mono } from './fonts';
 
@@ -23,9 +24,16 @@ const Home: React.FC = () => {
     <ClientSideProvider>
       <div className="flex justify-center">
         <h1
-          className={`${roboto_mono.className}, py-8 text-center font-mono text-8xl text-castleton-green`}
+          className={`${roboto_mono.className}, pt-8 text-center font-mono text-8xl text-castleton-green`}
         >
           Lait
+        </h1>
+      </div>
+      <div className="flex justify-center">
+        <h1
+          className={`${roboto_mono.className} text-center font-mono text-sm text-castleton-green`}
+        >
+          Natural Language / Image to LaTeX
         </h1>
       </div>
       <TextInput />
@@ -62,6 +70,7 @@ const Home: React.FC = () => {
           <LatexRender />
         </div>
       </div>
+      <Footer />
     </ClientSideProvider>
   );
 };
