@@ -35,16 +35,16 @@ export const SubmitButton: FC<ButtonProps> = ({ label }) => {
   };
 
   const classes = [
-    'bg-blue-600',
+    'bg-castleton-green',
     'text-white',
     'rounded',
     'py-1',
     'focus:outline-none',
     'focus:ring-2',
-    'focus:ring-blue-600',
+    'focus:ring-castleton-green',
     'transition',
-    'hover:bg-blue-600',
-    'active:bg-blue-700',
+    'hover:bg-castleton-green',
+    'active:bg-castleton-green',
     'flex-1',
   ].join(' ');
 

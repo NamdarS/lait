@@ -17,7 +17,7 @@ export const TextInput: React.FC = () => {
     'w-2/5',
     'focus:outline-none',
     'focus:ring',
-    'focus:ring-blue-500',
+    'focus:ring-castleton-green',
     'focus:ring-opacity-50',
     'shadow',
   ].join(' ');

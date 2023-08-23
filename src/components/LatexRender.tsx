@@ -9,7 +9,7 @@ export const LatexRender: FC = () => {
   const latexCode = useSelector((state: RootState) => state.latex.latexCode);
 
   return (
-    <div className="h-[400px] rounded border border-dark-beige bg-beige">
+    <div className="h-[400px] rounded border-2 border-dark-beige bg-beige">
       <MathJaxProvider>
         {latexCode && <MathJaxNode inline formula={latexCode} />}
       </MathJaxProvider>

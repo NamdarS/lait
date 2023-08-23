@@ -10,6 +10,7 @@ module.exports = {
       colors: {
         beige: '#F5DEB3',
         'dark-beige': '#DEB887',
+        'castleton-green': '#00563F',
       },
     },
   },

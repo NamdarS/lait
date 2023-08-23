@@ -23,7 +23,7 @@ const Home: React.FC = () => {
     <ClientSideProvider>
       <div className="flex justify-center">
         <h1
-          className={`${roboto_mono.className}, py-8 text-center font-mono text-8xl text-blue-600`}
+          className={`${roboto_mono.className}, py-8 text-center font-mono text-8xl text-castleton-green`}
         >
           Lait
         </h1>
@@ -44,7 +44,7 @@ const Home: React.FC = () => {
         <div className="flex-1">
           <div className="flex justify-center">
             <h1
-              className={`${roboto_mono.className} text-center font-mono text-sm text-blue-600`}
+              className={`${roboto_mono.className} text-center font-mono text-sm text-castleton-green`}
             >
               Write LaTeX Code here
             </h1>
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
         <div className="flex-1">
           <div className="flex justify-center">
             <h1
-              className={`${roboto_mono.className} text-center font-mono text-sm text-blue-600`}
+              className={`${roboto_mono.className} text-center font-mono text-sm text-castleton-green`}
             >
               Watch it render here
             </h1>
