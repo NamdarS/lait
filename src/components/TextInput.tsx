@@ -23,7 +23,7 @@ export const TextInput: React.FC = () => {
   ].join(' ');
 
   return (
-    <div className="pt-32 flex justify-center">
+    <div className="py-4 flex justify-center">
       <input
         type="text"
         value={value}

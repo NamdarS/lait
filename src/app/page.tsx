@@ -29,7 +29,7 @@ const Home: React.FC = () => {
         </h1>
       </div>
       <TextInput />
-      <div className="flex space-x-3 w-40 mx-auto pt-4">
+      <div className="flex space-x-3 w-40 mx-auto py-4">
         <SubmitButton label="Submit" />
         <ImageUpload
           OCR_API_ENDPOINT="http://localhost:3000/api/ocr"
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
       <div className="flex justify-center">
         {uploadedFileName && <span>{uploadedFileName}</span>}
       </div>
-      <div className="flex py-24 px-24 justify-center">
+      <div className="flex py-10 px-24 justify-center">
         <div className="flex-1">
           <div className="flex justify-center">
             <h1
